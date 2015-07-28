@@ -8,15 +8,15 @@ app.use(express.static('./test/fixtures'));
 app.use(express.static('./node_modules'));
 
 module.exports = {
-    start: function (port, callback) {
-        server = app.listen(port, callback);
-    },
-    stop: function (callback) {
-        if(server) {
-            server.close(callback);
-        }
-        else {
-        	callback();
-        }
+  start: function(port, callback) {
+    server = app.listen(port, callback);
+  },
+  stop: function(callback) {
+    if (server) {
+      server.close(callback);
     }
+    else {
+      callback();
+    }
+  }
 };
